@@ -77,7 +77,7 @@ class DataBaseHundler(var context: Context): SQLiteOpenHelper(context, DATABASE_
     fun deleteData(collocation: Collocation?){
         val db = this.writableDatabase
 
-        db.delete(TABLE_NAME, COL_COLLOCATION + "=? and " + COL_DATE + "=?", arrayOf(collocation!!.collocation,collocation!!.date))
+        db.delete(TABLE_NAME, COL_COLLOCATION + "=? and " + COL_DATE + "=?", arrayOf(collocation?.collocation,collocation?.date))
 
         db.close()
     }
